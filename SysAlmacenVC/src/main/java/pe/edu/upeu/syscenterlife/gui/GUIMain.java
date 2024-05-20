@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package pe.edu.upeu.syscenterlife.gui;
 
 import java.awt.BorderLayout;
@@ -19,11 +23,13 @@ import javax.swing.JTabbedPane;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.stereotype.Component;
 import pe.edu.upeu.syscenterlife.modelo.MenuMenuItenTO;
-import pe.edu.upeu.syscenterlife.servivio.MenuMenuItemDao;
-import pe.edu.upeu.syscenterlife.servivio.MenuMenuItenDaoI;
+import pe.edu.upeu.syscenterlife.servicio.MenuMenuItemDao;
+import pe.edu.upeu.syscenterlife.servicio.MenuMenuItenDaoI;
 import pe.edu.upeu.syscenterlife.util.UtilsX;
 
+@Component
 public class GUIMain extends JFrame {
 
     Preferences userPrefs = Preferences.userRoot();
@@ -138,20 +144,20 @@ public class GUIMain extends JFrame {
             if (((JMenuItem) e.getSource()).getName()
                     .equals("micliente")) {
                 System.out.println("Holas si llega");
-                /*jtpane.removeAll();
-//MainCliente mc = new MainCliente();
-MainCliente mc = ctx.getBean(MainCliente.class);
-mc.setContexto(ctx);
-mc.setPreferredSize(new Dimension(1024, 600));
-scrollPane = new JScrollPane(mc);
-scrollPane.setHorizontalScrollBarPolicy(
-JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-scrollPane.setVerticalScrollBarPolicy(
-JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-jtpane.add(scrollPane, "Cliente");
-contai.add(BorderLayout.CENTER, jtpane);
-contai.validate();
-contai.repaint();*/
+                jtpane.removeAll();
+                //MainCliente mc = new MainCliente();
+                MainCliente mc = ctx.getBean(MainCliente.class);
+                mc.setContexto(ctx);
+                mc.setPreferredSize(new Dimension(1024, 600));
+                scrollPane = new JScrollPane(mc);
+                scrollPane.setHorizontalScrollBarPolicy(
+                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                scrollPane.setVerticalScrollBarPolicy(
+                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+                jtpane.add(scrollPane, "Cliente");
+                contai.add(BorderLayout.CENTER, jtpane);
+                contai.validate();
+                contai.repaint();
             }
             if (((JMenuItem) e.getSource()).getName().equals("miareaperiodo")) {
                 System.out.println("Si llega!");
@@ -159,7 +165,7 @@ contai.repaint();*/
             if (((JMenuItem) e.getSource()).getName().equals("mimiselectall")) {
                 jtpane.removeAll();//remueve todo el contenido
             }
-
         }
     }
+
 }
