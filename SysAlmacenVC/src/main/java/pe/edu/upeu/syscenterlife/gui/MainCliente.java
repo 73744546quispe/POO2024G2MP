@@ -19,13 +19,17 @@ import pe.edu.upeu.syscenterlife.modelo.Cliente;
 import pe.edu.upeu.syscenterlife.servicio.ClienteService;
 
 
+/**
+ *
+ * @author Datos
+ */
 @Component
 public class MainCliente extends javax.swing.JPanel {
 
     DefaultTableModel modelo;
     ConfigurableApplicationContext ctx;
     @Autowired
-    ClienteService clienteService ;
+    ClienteService clienteService;
     TableRowSorter<TableModel> trsfiltro;
 
     enum TIPOCLXIENTE {
@@ -37,12 +41,11 @@ public class MainCliente extends javax.swing.JPanel {
         for (TIPOCLXIENTE myVar : TIPOCLXIENTE.values()) {
             cbxTipo.addItem(myVar.toString());
         }
-        
+
     }
-    public void setContexto(ConfigurableApplicationContext ctx){
+    public void setContexto( ConfigurableApplicationContext ctx){
         this.ctx=ctx;
         listarClientes();
-                
     }
 
     public void listarClientes() {
@@ -104,7 +107,6 @@ public class MainCliente extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnNuevo = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
@@ -139,19 +141,13 @@ public class MainCliente extends javax.swing.JPanel {
 
         jButton5.setText("PDF");
 
-        jLabel7.setText("JHORMAN ");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel7)))
+                .addComponent(jLabel1)
                 .addGap(226, 226, 226)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -179,8 +175,7 @@ public class MainCliente extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDatoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jLabel7))
+                    .addComponent(jButton5))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
@@ -464,7 +459,6 @@ public class MainCliente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
