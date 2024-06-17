@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.com.syscenterlife.autocomp.ModeloDataAutocomplet;
 import pe.edu.upeu.syscenterlife.modelo.Cliente;
-import pe.edu.upeu.syscenterlife.modelo.repositorio.ClienteRepository;
+import pe.edu.upeu.syscenterlife.repositorio.ClienteRepository;
 import pe.edu.upeu.syscenterlife.util.ErrorLogger;
 
 @Service
 public class ClienteService {
+    ErrorLogger log=new ErrorLogger("ClienteService.class");
     
-ErrorLogger log=new ErrorLogger ("clienteService.class");
     @Autowired
     ClienteRepository clienteRepository;
 
@@ -59,7 +59,7 @@ ErrorLogger log=new ErrorLogger ("clienteService.class");
                 listarclientes.add(data);
             }
         } catch (Exception e) {
-            log.log(Level.SEVERE, "Error al realizar la Busqueda", e);
+            log.log(Level.SEVERE, "create", e);
         }
         return listarclientes;
     }

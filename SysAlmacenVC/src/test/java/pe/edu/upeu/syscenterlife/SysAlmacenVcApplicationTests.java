@@ -1,4 +1,4 @@
-/*package pe.edu.upeu.syscenterlife;
+package pe.edu.upeu.syscenterlife;
 
 /*import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,5 +10,4 @@ class SysAlmacenVcApplicationTests {
 	void contextLoads() {
 	}
 
-}
-*/
+}*/

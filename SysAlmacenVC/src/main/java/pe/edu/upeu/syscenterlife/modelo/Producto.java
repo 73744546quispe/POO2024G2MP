@@ -14,6 +14,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import java.util.List;
 import lombok.Data;
+
 @Data
 @Entity
 public class Producto {
@@ -45,10 +46,12 @@ public class Producto {
     @ManyToOne(optional = false)
     @JsonIgnoreProperties({"productos"})
     private Categoria idCategoria;
+    
     @JoinColumn(name = "id_marca", referencedColumnName = "id_marca")
     @ManyToOne(optional = false)
     @JsonIgnoreProperties({"productos"})
     private Marca idMarca;
+    
     @JoinColumn(name = "id_unidad", referencedColumnName = "id_unidad")
     @ManyToOne(optional = false)
     @JsonIgnoreProperties({"productos"})
@@ -62,5 +65,5 @@ public class Producto {
     @JoinColumn(name = "id_producto", referencedColumnName = "id_producto")
     @JsonIgnoreProperties({"idProducto"})
     public List<VentaDetalle> ventaDetalles;
-                
+    
 }

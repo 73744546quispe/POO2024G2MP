@@ -34,7 +34,6 @@ public class VentaDetalle {
     @Basic(optional = false)
     @Column(name = "subtotal")
     private double subtotal;
-
     @JoinColumn(name = "id_venta", referencedColumnName = "id_venta")
     @ManyToOne(optional = false)
     @JsonIgnoreProperties({"ventaDetalles"})
